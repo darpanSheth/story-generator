@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Darpan">
+    <title>Story Generator</title>
+    <style>
+        .table{
+            display: table;
+            border-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        .row{
+            display: table-row;
+        }
+        .row > *{
+            display: table-cell;
+        }
+        .row > :nth-child(1){
+            text-align: right;
+        }
+        .row > :nth-child(2){
+            margin-left: 15px;
+        }
+        .Tahoma{
+            font-family: Tahoma, sans-serif;
+        }
+        .blue{
+            color: blue;
+            font-family: "Comic Sans MS", sans-serif;
+        }
+        .red{
+            color: red;
+        }
+        #story{
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <section id="story-generator">
+        <h1>Story Generator</h1>
+        <p>
+            Enter appropriate valuesin all of the text boxes. Then click the <span class="Tahoma">Done</span> button to generate a story with your entered
+            values plugged into it.
+        </p>
+        <div class="table">
+            <form id="myForm">
+                <div class="row">
+                    <label for="noun">noun:</label>
+                    <input type="text" id="noun" name="missingHoles" maxlength="30"><br>
+                </div>
+                <div class="row">
+                    <label for="past-tense-verb">past tense verb:</label>
+                    <input type="text" id="past-tense-verb" name="missingHoles" maxlength="30"><br>
+                </div>
+                <div class="row">
+                    <label for="adjective">adjective:</label>
+                    <input type="text" id="adjective" name="missingHoles" maxlength="30"><br>
+                </div>
+                <div class="row">
+                    <label for="past-tense-verb2">past tense verb:</label>
+                    <input type="text" id="past-tense-verb2" name="missingHoles" maxlength="30"><br>
+                </div>
+                <div class="row">
+                    <label for="adjective2">adjective:</label>
+                    <input type="text" id="adjective2" name="missingHoles" maxlength="30"><br>
+                </div>
+            </form>
+        </div>
+        <input type="button" form="myForm" value="Done" onclick="showStory(this.form)"> 
+        <input type="reset" form="myForm" value="Reset">
+   </section>
+   <section id="story">
+        <p id="para" class="blue">
+            It was a dark and stormy nigth. A shot rang out! A <span class="red">&lt;missing text&gt;</span> slammed.
+            The maid <span class="red">&lt;missing text&gt;</span>. Suddenly, a <span class="red">&lt;missing text&gt;</span>
+            ship appeared on the horizon! While millions of people <span class="red">&lt;missing text&gt;</span>, the king 
+            lived in luxury. Meanwhile, on a <span class="red">&lt;missing text&gt;</span> farm in Kansas, a boy was growing 
+            up.<br><br>
+            The End
+        </p><br>
+        <input type="button" value="Return" onclick="showStoryInputs()">
+   </section>
+   <script src="storyGenerator.js"></script>
+</body>
+</html>
